@@ -3,6 +3,7 @@ import style from  './Botao.module.scss'
 
 interface Props {
     children: React.ReactNode;
+    type?: string
 }
 
 class Botao extends React.Component <Props>{

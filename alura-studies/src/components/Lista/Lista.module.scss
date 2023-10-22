@@ -5,6 +5,13 @@
     h2 {
       font-size: 1.25rem;
       margin-bottom: 12px;
+
+      &:hover{
+        cursor: pointer;
+        filter: brightness(130%);
+        color: #0593d2;
+        caret-color: transparent;
+      }
     }
   
     ul {
