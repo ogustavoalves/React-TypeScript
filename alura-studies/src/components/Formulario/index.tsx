@@ -2,6 +2,7 @@ import React from "react";
 import Botao from "../Botao";
 import style from './Formulario.module.scss';
 import { InterfaceTarefa } from "../../types/ITarefa";
+import { v4 as uuidv4 } from 'uuid';
 
 class Formulario extends React.Component<{ 
     setTarefas:React.Dispatch<React.SetStateAction<InterfaceTarefa[]>>
@@ -19,7 +20,8 @@ class Formulario extends React.Component<{
                 {
                     ...this.state,
                     selecionado: false,
-                    completado: false
+                    completado: false,
+                    id: uuidv4()
                 }
             ]
         );
@@ -58,7 +60,7 @@ class Formulario extends React.Component<{
                         value={this.state.tempo}
                         onChange={evento => this.setState({...this.state, tempo: evento.target.value})}
                         id="tempo" 
-                        min="00:00:00"
+                        min="00:00:01"
                         max="01:30:00"
                         required
                     />
