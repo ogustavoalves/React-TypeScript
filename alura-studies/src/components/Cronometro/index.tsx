@@ -6,10 +6,11 @@ import { InterfaceTarefa } from "../../types/ITarefa";
 import { useEffect, useState } from "react";
 
 interface Props{
-    selecionado: InterfaceTarefa | undefined
+    selecionado: InterfaceTarefa | undefined,
+    finalizarTarefa: () => void
 }
 
-export default function Cronometro({selecionado}: Props) {
+export default function Cronometro({selecionado, finalizarTarefa}: Props) {
     const [tempo, setTempo] = useState<number>();
 
     useEffect(() => {
@@ -22,6 +23,7 @@ export default function Cronometro({selecionado}: Props) {
                 setTempo(contador - 1);
                 return regressiva(contador - 1);
             }
+            finalizarTarefa();
         }, 1000)
     }
 
